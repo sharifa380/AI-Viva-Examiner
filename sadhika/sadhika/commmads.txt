@@ -1,0 +1,8 @@
+training day 3 :
+ 
+COMMANDS (PYTHON PACKAGING GUIDE)
+
+---> to create the file in AI FULL STACK 
+---> py -m venv.venv
+---> .venv\scripts\activate
+---> py -m pip --version

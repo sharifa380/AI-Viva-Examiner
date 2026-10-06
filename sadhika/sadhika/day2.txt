@@ -1,0 +1,106 @@
+23 - 07 - 26
+
+prblm:1480
+
+coding:
+class Solution:
+    def runningSum(self, nums):
+        new=[]
+        for i in range(len(nums)):
+            sum = 0
+        for j in range(i + 1):
+            sum = sum+nums[j]
+            new.append(sum)
+        return new
+
+output=[1,3,6,10]
+
+class Solution:
+    def runningSum(self, nums):
+        for i in range(1,len(nums)):
+            nums[i]=nums[i]+nums[i-1]
+        return nums
+
+
+prblm:217
+
+coding:
+
+class Solution:
+    def containsDuplicate(self, nums):
+        seen=set()
+        for i in nums:
+            if i in seen:
+                return True
+            seen.add(i)
+        return False
+
+output=false
+
+
+using:
+list = append
+set = add
+dict= update
+
+        
+
+prblm:238
+
+coding:
+
+class Solution:
+    def productExceptSelf(self, nums):
+        n = len(nums)
+        answer=[1]*n
+        for i in range(n):
+            product = 1
+            for j in range(n):
+                if i!=j:
+                    product=product*nums[j]
+            answer[i]=product
+        return answer
+
+output=[24,12,8,6]
+
+prblm:238
+
+coding:
+class Solution:
+    def productExceptSelf(self, nums):
+       n=len(nums)
+       prefix=[1]*n
+       suffix=[1]*n
+       answer=[1]*n
+       #built the prefix
+       for i in range(1,n):
+        prefix[i] = prefix[i-1]*nums[i-1]
+       #built the suffix
+       for i in range(n-2,-1,-1):
+        suffix[i]=suffix[i+1]*nums[i+1]
+        #bulit the answer
+       for i in range(n):
+        answer[i]=prefix[i]*suffix[i]
+       return answer
+
+output=[24,12,8,6]
+
+
+prblm:121
+coding:
+class Solution:
+    def maxProfit(self, prices):
+        l,r=0,1
+        maxP=0
+        while r<len(prices):
+            if prices[r]>prices[1]:
+                profit=prices[r]-prices[1]
+                maxP=max(maxP,profit)
+
+            else:
+                l=r
+            r+=1
+        return maxP        
+
+output=5
+
